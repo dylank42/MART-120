@@ -1,0 +1,25 @@
+body{
+    background-image: -moz-element();
+}
+
+div {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+span {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    display: block;
+    text-align: center;
+}
+
+.myClass{
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkgreen;
+}
+
+#myID {
+    color: rebeccapurple;
+    text-align: left;
+    font-weight: 900;
+    font-size: larger;
+}
