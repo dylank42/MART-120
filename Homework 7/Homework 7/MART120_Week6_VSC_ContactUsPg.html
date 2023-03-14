@@ -1,0 +1,96 @@
+<html>
+<title>Contact Us</title>
+
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>My Third page</title>
+
+        <script>
+            function getInformation()
+            {
+                var firstName = document.getElementById("fName").value
+                var lastName = document.getElementById("lName").value
+                // window.alert("Hello " + firstName);
+                document.getElementById("message").innerHTML = "Hello " + firstName + " " + lastName;
+            }
+
+            function checkboxes()
+            {
+               var firstName = document.getElementById("fName").value;
+               if(firstName == "")
+               {
+                window.alert("First name is required");
+                document.getElementById("fName").style.outlineColor = "red";
+                document.getElementById("fName").focus();
+               }
+
+               var lastName = document.getElementById("lName").value;
+               if(lastName == "")
+               {
+                window.alert("Last name is required")
+                document.getElementById("lName").style.outlineColor = "red";
+                document.getElementById("lName").focus();
+               }
+
+               var email = document.getElementById("email").value;
+               if(email == "")
+               {
+                window.alert("Email is required");
+                document.getElementById("email").style.outlineColor = "red";
+                document.getElementById("email").focus();
+               }
+
+               if(document.querySelectorAll('input[type="radio"]:checked').length === 0) alert("Terms of agreement is requried");
+               {
+                document.getElementById("yesOpen").style.outlineColor = "red";
+               }
+            }
+        </script>
+    </head>
+
+
+
+
+    <body style="background-color: lightslategrey;">
+        <div style="margin-left: 35px;">
+            <br />
+            <span ID="myID"> <h1>Contact Us page</h1> </span>
+            <br>
+
+            <p></p>
+                <p>First Name: <input type="text" id="fName">
+                <p>Last Name: <input type="text" id="lName"></p>
+                <p>Email: <input type="text" id="email"></p>
+
+
+        <form id="agreementBox" action="nextPage.html" type="Post">
+            <table>
+                <tr>
+                    <td>
+                        Do you accept the terms of agreement?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="yesOpen"name=" termsofagreement" value="yes">Yes<br>
+                        <input type="radio" id="noOpen" name="termsofagreement" value="yes">No<br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+         
+            <p></p>
+                <button id="mySubmit" class="btn btn-primary" onclick='checkboxes() + getInformation();' >Submit </button>
+                <div id="message"></div>
+            </p>
+
+        <span ID="myID">
+        <br />
+        <p> <a href="MART120_Week6_VSC MainPg.html"> Go to Home Page</a>
+            &nbsp;|&nbsp; <a href="MART120_Week6_VSC_ShortStroyPg.html"> Go to Second Page</a></p>
+        </span>
+        </div>
+    </body>
+
+</html>
