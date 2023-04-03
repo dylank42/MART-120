@@ -92,7 +92,7 @@ function draw()
     rect(hatX,hatY,300,100);
     hatX+=hatDirection;
     hatY+=hatDirection;
-    if(hatX >= 165 && hatY >= 165 || hatX <=114 && hatY <= 114)
+    if(hatX >= 80 && hatY >= 50 || hatX <=124 && hatY <= 40)
     {
         hatDirection *= -1;
     }
