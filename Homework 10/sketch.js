@@ -30,7 +30,8 @@ var movement;
 function setup()
 {
     createCanvas(500, 600);
-    movement = floor(random() * 10) + 1;
+    righteyeDirection = floor(random() * 10) + 1;
+    lefteyeDirection = floor(random() * 10) + 1;
 }
 
 function draw()
@@ -53,9 +54,7 @@ function draw()
     righteyeX+=righteyeDirection;
     if(righteyeX >= 354 || righteyeX <= 314)
     {
-        movement *= -1;
         righteyeDirection *= -1;
-        
     }
 
     //left pupil
@@ -93,7 +92,7 @@ function draw()
     rect(hatX,hatY,300,100);
     hatX+=hatDirection;
     hatY+=hatDirection;
-    if(hatX && hatY >= 165 || hatX && hatY <= 114)
+    if(hatX >= 165 && hatY >= 165 || hatX <=114 && hatY <= 114)
     {
         hatDirection *= -1;
     }
