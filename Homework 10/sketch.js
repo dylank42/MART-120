@@ -66,14 +66,12 @@ function draw()
         lefteyeDirection *= -1;
     }
   
-
     //left eye shine
     fill(90,90,0)
     point(160,260)
     //left eye shine
     point(360,260)
     
-
     //nose
     fill(40,0,90);
     triangle (240,300,250,350,300,300);
