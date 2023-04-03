@@ -1,9 +1,11 @@
 function setup()
+//code to make canvas appear with given size
 {
     createCanvas(500, 600);
 }
 
 function draw(MU1)
+//the following line is providing color to our canvas
 {
     background(120,50,70);
     fill(10,90,90);
@@ -30,5 +32,4 @@ function draw(MU1)
     textSize(20)
     text ('dylan kidd',380,580)
     textSize(50)
-    
 }
