@@ -27,30 +27,42 @@ function setup()
 }
 
 function draw()
-{   background(10,120,90);
-    stroke(0);
-    fill(0);
+{   
+    //call background funtion
+    createBackground();
     
     //boarder
     createBorders(20);
 
-    // exit message
+    //call exit funciton
     createExit();
-    textSize(20);
-    text("EXIT", width-400,height-25);
 
     // character;
     drawCharacter();
     characterMovement();
+    characterBoundaries();
 
     // enemy
     createEnemy ();
-
-    // enemy movement
     enemyMovement ();
 
     //draws shape
     clickShape ();
+
+    //call youwin function
+    createYouWin();
+}
+
+function createBackground(){
+background(10,120,90);
+stroke(0);
+fill(0);
+} 
+
+function createExit(){
+    // exit message
+    textSize(20);
+    text("EXIT", width-400,height-25);
 }
 
 function createEnemy(){
@@ -90,8 +102,7 @@ function enemyMovement(){
     }
 }
 
-function createExit()
-{
+function createYouWin(){
     if(characterX > 300 && characterX < 360 && characterY > 630)
     {
         fill(0);
@@ -116,10 +127,25 @@ function shapeBoundaries(){
     }
 }
 
+function characterBoundaries(){
+  if(characterX > width)
+  {
+      characterX = 0;
+  } else if (characterX < 0) {
+     characterX = width;
+  }
+  if(characterY > height)
+  {
+     characterY = 0;
+  } else if(characterY < 0) {
+     characterY = height;
+  }    
+}
+
 function clickShape(){
     // create the shape based on the mouse click
     fill(120,130,140);
-    circle(mouseShapeX, mouseShapeY, 25);
+    circle(mouseShapeX, mouseShapeY, 55);
 }
 
 function characterMovement()
@@ -143,9 +169,6 @@ function createCharacter(x,y)
     characterX = x;
     characterY = y;
     console.log(characterX);
-    //character
-    
-   // circle(characterX,characterY,25);
 }
 
 function drawCharacter()

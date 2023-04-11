@@ -31,7 +31,7 @@ function draw()
     stroke(0);
     fill(0);
     
-    //boarder
+    //call createboarder function
     createBorders(20);
 
     // exit message
