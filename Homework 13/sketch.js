@@ -35,14 +35,25 @@ function draw()
     createBorders(20);
 
     // exit message
+    createExit();
     textSize(20);
-    text("EXIT", width-400,height-25)
+    text("EXIT", width-400,height-25);
 
-    //createCharacter(200,350);
+    // character;
     drawCharacter();
     characterMovement();
 
+    // enemy
+    createEnemy ();
 
+    // enemy movement
+    enemyMovement ();
+
+    //draws shape
+    clickShape ();
+}
+
+function createEnemy(){
     // potential enemy 1
     fill(800,0,0);
     square(shapeX, shapeY, 10);
@@ -58,9 +69,9 @@ function draw()
     //speed
     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 8)) + 1);
     shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 8)) + 1);
+}
 
-
-
+function enemyMovement(){
     // move the shape
     shapeX += shapeXSpeed;
     shapeY += shapeYSpeed;
@@ -77,30 +88,35 @@ function draw()
     } else if(shapeY < 0) {
         shapeY = height;
     }
+}
 
-    // exit
-    if(characterX > 300 && characterX < 360 && characterY > 610)
+function createExit()
+{
+    if(characterX > 300 && characterX < 360 && characterY > 630)
     {
         fill(0);
         stroke(5);
         textSize(26);
         text("You Win!", width/2-50, height/2-50);
     }
+}
 
-     // character out of bounds
-     if(characterX > width)
-     {
-         characterX = 0;
-     } else if (characterX < 0) {
-        characterX = width;
-     }
-     if(characterY > height)
-     {
-        characterY = 0;
-     } else if(characterY < 0) {
-        characterY = height;
-     }    
+function shapeBoundaries(){
+    if(shapeX > width)
+    {
+        shapeX = 0;
+    } else if (shapeX < 0) {
+        shapeX = width;
+    }
+    if(shapeY > height)
+    {
+        shapeY = 0;
+    } else if(shapeY < 0) {
+        shapeY = height;
+    }
+}
 
+function clickShape(){
     // create the shape based on the mouse click
     fill(120,130,140);
     circle(mouseShapeX, mouseShapeY, 25);
@@ -121,6 +137,7 @@ function characterMovement()
         characterX += 10;   
     }
 }
+
 function createCharacter(x,y)
 {
     characterX = x;
@@ -136,6 +153,7 @@ function drawCharacter()
     fill(23,40,123);
     circle(characterX,characterY,25);
 }
+
 function createBorders(thickness)
 {
     // top border
