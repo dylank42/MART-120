@@ -65,19 +65,21 @@ function draw()
     createYouWin();
 }
 
-function createBackground(){
+function createBackground()
+{
 background(10,120,90);
 stroke(0);
 fill(0);
 } 
 
-function createExit(){
+function createExit()
+{
     // exit message
     textSize(20);
     text("EXIT", width-400,height-25);
 }
 
-function createEnemy()
+function createEnemy(){
 
     // potential enemy 1
     fill(800,0,0);
@@ -102,6 +104,7 @@ function createEnemy()
     }
     if (shapeYs[i] < 0) {
         shapeYs[i] = height;
+    }
     }
 }
 
