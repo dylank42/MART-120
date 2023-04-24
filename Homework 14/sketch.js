@@ -32,7 +32,7 @@ function setup()
         shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
         shapeXs[i] = getRandomNumber(500);
         shapeYs[i] = getRandomNumber(600);
-        diameters[i] = getRandomNumber(30);
+        diameters[i] = getRandomNumber(60);
     }
 
     createCharacter(200,350);
@@ -82,12 +82,13 @@ function createExit()
 function createEnemy(){
 
     // potential enemy 1
-    fill(800,0,0);
+    fill(random(255),0, random(255));
+    
     //shape
     for (var i = 0; i < shapeXs.length; i++) {
         circle(shapeXs [i], shapeYs [i], diameters[i]);
-        shapeXSpeeds [i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-        shapeYSpeeds [i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+        shapeXSpeeds [i] = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 4);
+        shapeYSpeeds [i] = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 1);
 
     // move the shape
     shapeXs[i] += shapeXSpeeds[i];
@@ -107,6 +108,7 @@ function createEnemy(){
     }
     }
 }
+function enemyMovement(){}
 
 function createYouWin(){
     if(characterX > 300 && characterX < 360 && characterY > 630)
@@ -178,7 +180,7 @@ function createCharacter(x,y)
 
 function drawCharacter()
 {
-    fill(23,40,123);
+    fill(1100);
     circle(characterX,characterY,25);
 }
 
